@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model</title>
+  <style>
+    html{
+      font-size: 50px;
+    }
+    main{
+      width: 80%;
+      font-size: 700px;
+    }
+    h1{
+       width: 50%  ;
+       height: 100vh;
+       /* vh means to take up the entire view height */
+       font-size: 1.25rem;
+       height: 50vh;
+       /* take up 50% of the view height */
+       background-color: blue;
+    }
+    /* the font size of the h1 will be 1.25 * 50px,,,this is because it is relative to its root parent */
+
+    p{
+      font-size: .5rem;
+      /* .5 means 0.5 */
+      width: 400px;
+      background-color: lightpink;
+      height: 250px;
+      min-height: 250px;
+      /* the text cannot go below 250,but if it does keep going down,  */
+      overflow: auto;
+      /* this dos not allow the text to flow beyound its width */
+      max-height: 250px;
+      /* the highest it can go is 250px, this is when you need the overflow, in case the text is more than 250px*/
+      padding: 20px 10px 25px 1em;
+      padding: 20px 25px;
+      /* this will give the top and bottom 20px padding and the left and right a padding of 25px */
+      padding: 20px 25px 30px ;
+      /* this will give the top 20px, right 25px, bottom 30px and will automatically give the left a 25px pading that was assigned to the right */
+    
+      /* BORDERS */
+      /* borders can take 3 values, line width, line height, color */
+      border:40px double grey ;
+      /* you can also specify borders..either border right,left,top or bottom and style them separately */
+      border-right-width: 20px;
+      border-left-width: 20px;
+
+      /* MARGIN */
+      /* margin is space around an element,
+      margin can also be used to center an element that is block f */
+      margin: 5px auto;
+      /* 5px margin left and right and balane it in the middle */
+    }
+    p>a{
+      /* if you want sapcing around an inline element you cant use padding alone(it will overshadow some text around it) but you can change the display to in-line flex */
+      display: inline-flex;
+      background-color: lightblue;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Frontend</h1>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni minima, dolorem,<a href="">i mean no harm</a> possimus ad necessitatibus perferendis esse ea rerum sunt quidem exercitationem nam fugiat nemo repellendus recusandae excepturi, harum dolore voluptate?
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendivel temporibus aut ab quas veritatis iste impedit vero repellendus suscipit, nemo quisquam asperiores recusandae praesentium, corrupti voluptate harum facere laudantiu
+  </p>
+  
+</body>
+</html>
