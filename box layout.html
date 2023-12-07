@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Box layout</title>
+  <style>
+
+    /* li{
+      display: inline-block;
+      width: 40%; */
+    nav ul{
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      /* justify-content: end;
+      this will bring it to the end part */
+      justify-content: center;
+      /* to say you want these links to be in the center then you eill use the align items center
+      */
+      align-items: center;
+      height: 100px; 
+      /* you can also choose to align items using padding instaed of using height */
+      background-color: lightskyblue;
+      /* to change the alignment of a particular element you use align-self */
+    }
+    /* note some styles will not work if you use padding instead of height,if you use padding together with the height its going to work */
+    /* there is also a justify content that is space evenly or space between */
+    nav li:nth-of-type(4n+1){
+      text-decoration: none;
+      align-self: flex-start;
+      /* this makes the link go up */
+      /* to target only link 1 and 5 */
+      align-self: start;
+    }
+    nav li:nth-of-type(2n+4){
+      text-decoration: none;
+      align-self: flex-end;
+    }
+    nav{
+      position: fixed;
+      /* by default fixed takes the fixed element to the left 
+      positon has four properties top,bottom,left,right*/
+      right: 0;
+      /* right 0 takes it to the right */
+      left: 0;
+      /* using this two together makes the fixed elements to take the full width */
+    }
+    section{
+      background-color: lightpink;
+      overflow: auto;
+      /* display: grid; */
+      /* grid-template-columns: 1fr 3fr;
+      column-gap: 20px;
+      grid-template-rows:200px ; */
+      /* this gap can take two thigs: roe gap and column gap...you can have it as either row gap or column gap */
+      /* when using fixed make your main relative(then you can specify either top or bottom or left or right away from the fixed elements) to the fixed elements */
+    }  
+    h2,p{
+      background-color: lightpink;
+    }
+    main{
+      position: relative;
+      top: 150px;
+      inset-block-start: 120px;
+      /* inset block start is the equivalent of top (they perform the same function*/
+      /* inset inline is the equivalent of left and right */
+      z-index: -1;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 150px);
+      /* this means repeat two rows and each rows shoild be 150px each  and it can be also wrutten as 150px 150px 150px 150px*/
+      gap:10px 30px;
+      grid-template-areas: 
+      "a a a a"
+      "a a a a"
+      "b c f f "
+      "d e f f";
+      gap: 10px 30px;
+    }
+    section:nth-of-type(1){
+      grid-area: a;
+    }
+    section:nth-of-type(2){
+      grid-area: b; 
+    }
+    section:nth-of-type(3){
+      grid-area: c;
+    }
+    section:nth-of-type(4){
+      grid-area: d;
+    }
+    section:nth-of-type(5){
+      grid-area: e;
+    }
+    section:nth-of-type(6){
+      grid-area: f;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- nav>ul>(li>a{link$})*6 -->
+  <nav>
+    <ul>
+      <li><a href="">link1</a></li>
+      <li><a href="">link2</a></li>
+      <li><a href="">link3</a></li>
+      <li><a href="">link4</a></li>
+      <li><a href="">link5</a></li>
+      <li><a href="">link6</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- (sect>h2{model $}+p)*6 -->
+    <section>
+      <h2>model 1</h2>
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi, nisi tempore repellendus suscipit rerum error laboriosam adipisci id esse dolore incidunt enim earum quidem eaque, quam possimus quis odit. </p>
+
+    </section>
+    <section>
+      <h2>model 2</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi, nisi tempore repellendus suscipit rerum error laboriosam adipisci id esse dolore incidunt enim earum quidem eaque, quam possimus quis odit.</p>
+    </section>
+    <section>
+      <h2>model 3</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi, nisi tempore repellendus suscipit rerum error laboriosam adipisci id esse dolore incidunt enim earum quidem eaque, quam possimus quis odit.</p>
+    </section>
+    <section>
+      <h2>model 4</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi, nisi tempore repellendus suscipit rerum error laboriosam adipisci id esse dolore incidunt enim earum quidem eaque, quam possimus quis odit.</p>
+    </section>
+    <section>
+      <h2>model 5</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi, nisi tempore repellendus suscipit rerum error laboriosam adipisci id esse dolore incidunt enim earum quidem eaque, quam possimus quis odit.</p>
+    </section>
+    <section>
+      <h2>model 6</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi, nisi tempore repellendus suscipit rerum error laboriosam adipisci id esse dolore incidunt enim earum quidem eaque, quam possimus quis odit.</p>
+    </section>
+  </main>
+  <ul>
+    <li>inline block 1</li>
+    <li>inline block 1</li>
+    <li>inline block 1</li>
+    <li>inline block 1</li>
+    <li>inline block 1</li>
+    <li>inline block 1</li>
+    
+  </ul>
+  <!-- box layout...an element has ypes of display, in-line block,in-line flex, grid, flex, none -->
+</body>
+</html>
